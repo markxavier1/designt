@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="designtModelStoreContainer" CdmEntityContainer="designtEntities">
+    <EntitySetMapping Name="protbls">
+      <EntityTypeMapping TypeName="designtModel.protbl">
+        <MappingFragment StoreEntitySet="protbl">
+          <ScalarProperty Name="ProId" ColumnName="ProId" />
+          <ScalarProperty Name="ProName" ColumnName="ProName" />
+          <ScalarProperty Name="ProImg" ColumnName="ProImg" />
+          <ScalarProperty Name="ProDes" ColumnName="ProDes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sertbls">
+      <EntityTypeMapping TypeName="designtModel.sertbl">
+        <MappingFragment StoreEntitySet="sertbl">
+          <ScalarProperty Name="SerId" ColumnName="SerId" />
+          <ScalarProperty Name="SerName" ColumnName="SerName" />
+          <ScalarProperty Name="SerImg" ColumnName="SerImg" />
+          <ScalarProperty Name="SerDes" ColumnName="SerDes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

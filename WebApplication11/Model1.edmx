@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="designtModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="protbl">
+          <Key>
+            <PropertyRef Name="ProId" />
+          </Key>
+          <Property Name="ProId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProName" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ProImg" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ProDes" Type="varchar" MaxLength="5000" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sertbl">
+          <Key>
+            <PropertyRef Name="SerId" />
+          </Key>
+          <Property Name="SerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SerName" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="SerImg" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="SerDes" Type="varchar" MaxLength="5000" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="designtModelStoreContainer">
+          <EntitySet Name="protbl" EntityType="Self.protbl" Schema="designt" store:Type="Tables" />
+          <EntitySet Name="sertbl" EntityType="Self.sertbl" Schema="designt" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="designtModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="protbl">
+          <Key>
+            <PropertyRef Name="ProId" />
+          </Key>
+          <Property Name="ProId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProImg" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProDes" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sertbl">
+          <Key>
+            <PropertyRef Name="SerId" />
+          </Key>
+          <Property Name="SerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SerName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SerImg" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SerDes" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="designtEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="protbls" EntityType="Self.protbl" />
+          <EntitySet Name="sertbls" EntityType="Self.sertbl" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="designtModelStoreContainer" CdmEntityContainer="designtEntities">
+          <EntitySetMapping Name="protbls">
+            <EntityTypeMapping TypeName="designtModel.protbl">
+              <MappingFragment StoreEntitySet="protbl">
+                <ScalarProperty Name="ProId" ColumnName="ProId" />
+                <ScalarProperty Name="ProName" ColumnName="ProName" />
+                <ScalarProperty Name="ProImg" ColumnName="ProImg" />
+                <ScalarProperty Name="ProDes" ColumnName="ProDes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sertbls">
+            <EntityTypeMapping TypeName="designtModel.sertbl">
+              <MappingFragment StoreEntitySet="sertbl">
+                <ScalarProperty Name="SerId" ColumnName="SerId" />
+                <ScalarProperty Name="SerName" ColumnName="SerName" />
+                <ScalarProperty Name="SerImg" ColumnName="SerImg" />
+                <ScalarProperty Name="SerDes" ColumnName="SerDes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

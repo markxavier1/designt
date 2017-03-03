@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="designtModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="protbl">
+    <Key>
+      <PropertyRef Name="ProId" />
+    </Key>
+    <Property Name="ProId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProName" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="ProImg" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="ProDes" Type="varchar" MaxLength="5000" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sertbl">
+    <Key>
+      <PropertyRef Name="SerId" />
+    </Key>
+    <Property Name="SerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SerName" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="SerImg" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="SerDes" Type="varchar" MaxLength="5000" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="designtModelStoreContainer">
+    <EntitySet Name="protbl" EntityType="Self.protbl" Schema="designt" store:Type="Tables" />
+    <EntitySet Name="sertbl" EntityType="Self.sertbl" Schema="designt" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
