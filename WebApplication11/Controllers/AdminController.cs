@@ -10,10 +10,10 @@ namespace WebApplication11.Controllers
 {
     public class AdminController : Controller
     {
-        designtEntities dt;
+        designtEntities dt = new WebApplication11.designtEntities();
         public AdminController()
         {
-           dt = new WebApplication11.designtEntities();
+           //dt = new WebApplication11.designtEntities();
         }
         // GET: Admin
         public ActionResult Index()
@@ -25,10 +25,10 @@ namespace WebApplication11.Controllers
         {
             return View();
         }
-        public ActionResult UpdateSer(int id)
+        public ActionResult UpdateSer(string sid)
         {
 
-
+            int id = Convert.ToInt32(sid);
            sertbl st= dt.sertbls.Find(id);
             return View(st);
         }
@@ -73,6 +73,7 @@ namespace WebApplication11.Controllers
         public ActionResult submitUpdate(sertbl ser, HttpPostedFileBase file)
         {
 
+            designtEntities d = new designtEntities();
             if (file != null && file.ContentLength > 0)
                 try
                 {
@@ -92,6 +93,7 @@ namespace WebApplication11.Controllers
                 catch (Exception ex)
                 {
                     ViewBag.Message = "ERROR:" + ex.Message.ToString();
+                   
                 }
             else
             {

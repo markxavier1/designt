@@ -38,7 +38,10 @@
                                     <label>Description</label>
                                     @Html.TextAreaFor(c => c.SerDes, 10, 40, new { @class = "form-control", @placeholder = "Name" });
                                 </div>
-
+                                <div class="form-group">
+                                    <label>@ViewBag.Message</label>
+                                  
+                                </div>
 
                                 @Html.TextBox("btnsubmit", "Save Subject", new { type = "Submit", @class = "btn btn-primary" })
                                 @Html.TextBox("btnsubmit", "Save Subject", new { type = "Reset", @class = "btn btn-danger" })
