@@ -1,6 +1,6 @@
-﻿@model sertbl
+﻿@model protbl
 @{
-    ViewBag.Title = "AddSer";
+    ViewBag.Title = "AddPro";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
@@ -8,7 +8,7 @@
     <div class="row">
         <!-- page header -->
         <div class="col-lg-12">
-            <h1 class="page-header">Forms</h1>
+            <h1 class="page-header">Add Pro</h1>
         </div>
         <!--end page header -->
     </div>
@@ -17,18 +17,18 @@
             <!-- Form Elements -->
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Basic Form Elements
+                    Add Pro
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-6 col-md-12">
-                        @using (Html.BeginForm("submitSer", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
-                        {
+                            @using (Html.BeginForm("submitPro", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
 
-                                <div class="form-group">
-                                    <label>Name</label>
-                                    @Html.TextBoxFor(c => c.SerName, "", new { @class = "form-control", @placeholder = "Name"  })
-                                </div>
+                            <div class="form-group">
+                                <label>Name</label>
+                                @Html.TextBoxFor(c => c.ProName, "", new { @class = "form-control", @placeholder = "Name" })
+                            </div>
 
                                 <div class="form-group">
                                     <label>File input</label>
@@ -36,15 +36,15 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Description</label>
-                              @Html.TextAreaFor(c => c.SerDes, 10, 40,new { @class = "form-control", @placeholder = "Name" });
+                                    @Html.TextAreaFor(c => c.ProDes, 10, 40, new { @class = "form-control", @placeholder = "Name" });
                                 </div>
 
-                                
+
                                 @Html.TextBox("btnsubmit", "Save Subject", new { type = "Submit", @class = "btn btn-primary" })
-                            @Html.TextBox("btnsubmit", "Reset", new { type = "Reset", @class = "btn btn-danger" })
-                        }
+                                @Html.TextBox("btnsubmit", "Reset", new { type = "Reset", @class = "btn btn-danger" })
+                            }
                         </div>
-                 
+
                     </div>
                 </div>
             </div>
@@ -52,4 +52,7 @@
         </div>
     </div>
 </div>
+
+
+
 

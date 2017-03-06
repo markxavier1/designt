@@ -261,6 +261,9 @@
     <Content Include="Views\Admin\AddSer.cshtml" />
     <Content Include="Views\Admin\ViewSer.cshtml" />
     <Content Include="Views\Admin\UpdateSer.cshtml" />
+    <Content Include="Views\Admin\AddPro.cshtml" />
+    <Content Include="Views\Admin\ViewPro.cshtml" />
+    <Content Include="Views\Admin\Updatepro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -13,7 +13,7 @@ namespace WebApplication11.Controllers
         designtEntities dt = new WebApplication11.designtEntities();
         public AdminController()
         {
-           //dt = new WebApplication11.designtEntities();
+            //dt = new WebApplication11.designtEntities();
         }
         // GET: Admin
         public ActionResult Index()
@@ -29,18 +29,18 @@ namespace WebApplication11.Controllers
         {
 
             int id = Convert.ToInt32(sid);
-           sertbl st= dt.sertbls.Find(id);
+            sertbl st = dt.sertbls.Find(id);
             return View(st);
         }
 
 
         public ActionResult ViewSer()
         {
-           
+
             return View(dt.sertbls.ToList());
         }
 
-        public ActionResult submitSer(sertbl ser,HttpPostedFileBase file)
+        public ActionResult submitSer(sertbl ser, HttpPostedFileBase file)
         {
 
             if (file != null && file.ContentLength > 0)
@@ -49,7 +49,7 @@ namespace WebApplication11.Controllers
                     string path = Path.Combine(Server.MapPath("~/images"),
                     Path.GetFileName(file.FileName));
                     file.SaveAs(path);
-                    ser.SerImg = "/images/"+ file.FileName;
+                    ser.SerImg = "/images/" + file.FileName;
                     dt.sertbls.Add(ser);
                     dt.SaveChanges();
 
@@ -93,12 +93,100 @@ namespace WebApplication11.Controllers
                 catch (Exception ex)
                 {
                     ViewBag.Message = "ERROR:" + ex.Message.ToString();
-                   
+
                 }
             else
             {
 
                 dt.Entry(ser).State = EntityState.Modified;
+                dt.SaveChanges();
+                ViewBag.Message = "File uploaded successfully";
+
+            }
+            return RedirectToAction("ViewSer");
+        }
+
+
+        public ActionResult AddPro()
+        {
+            return View();
+        }
+
+        public ActionResult submitPro(protbl pro, HttpPostedFileBase file)
+        {
+
+            if (file != null && file.ContentLength > 0)
+                try
+                {
+                    string path = Path.Combine(Server.MapPath("~/images"),
+                    Path.GetFileName(file.FileName));
+                    file.SaveAs(path);
+                    pro.ProImg = "/images/" + file.FileName;
+                    dt.protbls.Add(pro);
+                    dt.SaveChanges();
+
+
+                    ViewBag.Message = "File uploaded successfully";
+
+
+                }
+                catch (Exception ex)
+                {
+                    ViewBag.Message = "ERROR:" + ex.Message.ToString();
+                }
+            else
+            {
+                ViewBag.Message = "You have not specified a file.";
+            }
+            return RedirectToAction("AddPro");
+        }
+
+
+        public ActionResult ViewPro()
+        {
+
+            return View(dt.protbls.ToList());
+        }
+
+        public ActionResult Updatepro(int id)
+        {
+
+           // int id = Convert.ToInt32(sid);
+            protbl pt = dt.protbls.Find(id);
+            return View(pt);
+        }
+
+        public ActionResult submitUpdatePro(protbl pro, HttpPostedFileBase file)
+        {
+
+            designtEntities d = new designtEntities();
+            if (file != null && file.ContentLength > 0)
+                try
+                {
+                    string path = Path.Combine(Server.MapPath("~/images"),
+                    Path.GetFileName(file.FileName));
+                    file.SaveAs(path);
+                    pro.ProImg = "/images/" + file.FileName;
+                    dt.protbls.Attach(pro);
+                    dt.Entry(pro).State = EntityState.Modified;
+                    dt.SaveChanges();
+
+
+
+                    ViewBag.Message = "File uploaded successfully";
+
+
+                }
+                catch (Exception ex)
+                {
+                    ViewBag.Message = "ERROR:" + ex.Message.ToString();
+
+                }
+            else
+            {
+
+                dt.protbls.Attach(pro);
+                dt.Entry(pro).State = EntityState.Modified;
                 dt.SaveChanges();
                 ViewBag.Message = "File uploaded successfully";
 
