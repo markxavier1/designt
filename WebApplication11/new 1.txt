@@ -1,0 +1,17 @@
+CREATE TABLE `protbl` (
+  `ProId` int(11) NOT NULL AUTO_INCREMENT,
+  `ProName` varchar(500) NOT NULL,
+  `ProImg` varchar(200) NOT NULL,
+  `ProDes` varchar(5000) NOT NULL,
+  PRIMARY KEY (`ProId`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `sertbl` (
+  `SerId` int(11) NOT NULL AUTO_INCREMENT,
+  `SerName` varchar(500) NOT NULL,
+  `SerImg` varchar(200) NOT NULL,
+  `SerDes` varchar(5000) NOT NULL,
+  PRIMARY KEY (`SerId`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+SELECT * FROM designt.sertbl;
