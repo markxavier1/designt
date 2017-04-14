@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="designtModelStoreContainer" CdmEntityContainer="designtEntities">
+  <EntityContainerMapping StorageEntityContainer="designtModelStoreContainer" CdmEntityContainer="designtEntities1">
     <EntitySetMapping Name="protbls">
       <EntityTypeMapping TypeName="designtModel.protbl">
         <MappingFragment StoreEntitySet="protbl">
@@ -8,6 +8,7 @@
           <ScalarProperty Name="ProName" ColumnName="ProName" />
           <ScalarProperty Name="ProImg" ColumnName="ProImg" />
           <ScalarProperty Name="ProDes" ColumnName="ProDes" />
+          <ScalarProperty Name="protType" ColumnName="protType" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -18,6 +19,14 @@
           <ScalarProperty Name="SerName" ColumnName="SerName" />
           <ScalarProperty Name="SerImg" ColumnName="SerImg" />
           <ScalarProperty Name="SerDes" ColumnName="SerDes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cattbls">
+      <EntityTypeMapping TypeName="designtModel.cattbl">
+        <MappingFragment StoreEntitySet="cattbl">
+          <ScalarProperty Name="catType" ColumnName="catType" />
+          <ScalarProperty Name="catId" ColumnName="catId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

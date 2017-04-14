@@ -16,7 +16,7 @@ namespace WebApplication11
     public partial class designtEntities : DbContext
     {
         public designtEntities()
-            : base("name=designtEntities")
+            : base("name=designtEntities1")
         {
         }
     
@@ -27,5 +27,6 @@ namespace WebApplication11
     
         public DbSet<protbl> protbls { get; set; }
         public DbSet<sertbl> sertbls { get; set; }
+        public DbSet<cattbl> cattbls { get; set; }
     }
 }

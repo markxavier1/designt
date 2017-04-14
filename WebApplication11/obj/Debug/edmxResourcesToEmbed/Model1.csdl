@@ -8,6 +8,7 @@
     <Property Name="ProName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="ProImg" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="ProDes" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="protType" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
   </EntityType>
   <EntityType Name="sertbl">
     <Key>
@@ -18,8 +19,16 @@
     <Property Name="SerImg" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="SerDes" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" Nullable="false" />
   </EntityType>
-  <EntityContainer Name="designtEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="designtEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="protbls" EntityType="Self.protbl" />
     <EntitySet Name="sertbls" EntityType="Self.sertbl" />
+    <EntitySet Name="cattbls" EntityType="designtModel.cattbl" />
   </EntityContainer>
+  <EntityType Name="cattbl">
+    <Key>
+      <PropertyRef Name="catId" />
+    </Key>
+    <Property Name="catId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="catType" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

@@ -12,12 +12,9 @@ namespace WebApplication11
     using System;
     using System.Collections.Generic;
     
-    public partial class protbl
+    public partial class cattbl
     {
-        public int ProId { get; set; }
-        public string ProName { get; set; }
-        public string ProImg { get; set; }
-        public string ProDes { get; set; }
-        public string protType { get; set; }
+        public int catId { get; set; }
+        public string catType { get; set; }
     }
 }

@@ -25,6 +25,12 @@ namespace WebApplication11.Controllers
         {
             return View();
         }
+
+
+        public ActionResult AddCat()
+        {
+            return View();
+        }
         public ActionResult UpdateSer(string sid)
         {
 
@@ -72,6 +78,7 @@ namespace WebApplication11.Controllers
 
         public ActionResult submitUpdate(sertbl ser, HttpPostedFileBase file)
         {
+      
 
             designtEntities d = new designtEntities();
             if (file != null && file.ContentLength > 0)
@@ -109,6 +116,8 @@ namespace WebApplication11.Controllers
 
         public ActionResult AddPro()
         {
+
+            ViewBag.ListOfCategories = dt.cattbls.ToList(); ;
             return View();
         }
 
@@ -139,6 +148,12 @@ namespace WebApplication11.Controllers
                 ViewBag.Message = "You have not specified a file.";
             }
             return RedirectToAction("AddPro");
+        }
+        public ActionResult submitcat(cattbl cat)
+        {
+            dt.cattbls.Add(cat);
+            dt.SaveChanges();
+            return RedirectToAction("AddCat");
         }
 
 
@@ -192,6 +207,15 @@ namespace WebApplication11.Controllers
 
             }
             return RedirectToAction("ViewSer");
+        }
+
+
+        public ActionResult AddHome(int id)
+        {
+
+            // int id = Convert.ToInt32(sid);
+            protbl pt = dt.protbls.Find(id);
+            return View(pt);
         }
     }
 }
